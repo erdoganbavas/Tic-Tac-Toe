@@ -1,0 +1,7 @@
+<div class="boardWrapper">
+  <div
+    class="cell"
+    *ngFor="let cell of cells"
+    (click)="onBoardCellClick(cell)"
+    [innerHTML]="cell.valueSign"></div>
+</div>

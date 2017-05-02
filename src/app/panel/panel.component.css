@@ -1,0 +1,16 @@
+.info{
+  text-align: center;
+  font-size: 28px;
+  margin: 15px 0;
+  font-family: 'Baloo', cursive;
+  color: #848484;
+}
+
+.restart_button{
+  margin: auto;
+  display: block;
+  border: 0px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #a7a7a7;
+}

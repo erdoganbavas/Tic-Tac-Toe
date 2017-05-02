@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo');
+
+.container{width: 80%; max-width: 80%; margin: auto;}
+.title{font-family: 'Baloo', cursive; text-align: center}
