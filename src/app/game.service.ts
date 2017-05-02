@@ -76,7 +76,6 @@ export class GameService {
     let played = false;
 
     while (!played) {
-      console.log('cpu oynuyor');
       played = this.cells[Math.floor((Math.random() * 8))].setValue('o');
     }
   }
@@ -84,7 +83,7 @@ export class GameService {
   isGameOver() {
     let winner = null;
 
-    // dikey
+    // vertical
     for (let i = 0; i < 3; i++) {
       if ( this.cells[i].value === this.cells[i + 3].value &&
         this.cells[i + 3].value === this.cells[i + 6].value &&
@@ -93,7 +92,7 @@ export class GameService {
       }
     }
 
-    // yatay
+    // horizontal
     if (winner === null) {
       for (let i = 0; i < 9; i += 3) {
         if ( this.cells[i].value === this.cells[i + 1].value &&
@@ -104,7 +103,7 @@ export class GameService {
       }
     }
 
-    // çapraz
+    // diagonal
     if (winner === null) {
       if ( this.cells[0].value === this.cells[4].value &&
         this.cells[4].value === this.cells[8].value &&
@@ -120,7 +119,7 @@ export class GameService {
       }
     }
 
-    // berabere mi
+    // or a draw?
     if (winner === null) {
       let thereEmptyCell = false;
       for (let i = 0; i < this.cells.length; i++) {
@@ -134,7 +133,6 @@ export class GameService {
       winner = thereEmptyCell === false ? 'draw' : winner;
     }
 
-    console.log('winner ', winner);
     if (winner != null) {
       this.gameOverAlert.next(winner);
     }
